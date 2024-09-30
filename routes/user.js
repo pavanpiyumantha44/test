@@ -1,8 +1,15 @@
 import express from 'express'
 const router = express.Router();
 
-router.get('/',(req,res)=>{
-    return res.status(200).json({success:true,message:"Hello Node"});
-})
+
+router.get('/', (req, res) => {
+    res.send('Home Page');
+});
+  
+router.get('/about', (req, res) => {
+    res.send('About Page');
+});
+  
+
 
 export default router;

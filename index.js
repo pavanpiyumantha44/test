@@ -1,15 +1,9 @@
 import express from 'express';
+import userRouter from './routes/user.js';
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.send('Home Page');
-});
-
-app.get('/about', (req, res) => {
-  res.send('About Page');
-});
-
+app.use('/',userRouter);
 app.use((req, res) => {
   res.status(404).send('404 - Page Not Found');
 });
